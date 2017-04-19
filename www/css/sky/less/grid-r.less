@@ -1,0 +1,34 @@
+.colSet-non();
+.colMake-non();
+.offsetMake-non();
+
+//.cols-media(@sky-sm-size,sm);
+
+.cols-media(@sky-media-control,@sky-media-control-name);
+
+//.cols-media(@sky-lg-size,lg);
+
+//下面为一些辅助类
+//响应式隐藏
+.hidden-control(@a){
+	.hidden-@{a}{
+		display: none !important;
+	}
+}
+//媒体控制
+@media  (max-width:@sky-media-control){//手机&flat
+	.hidden-control(@sky-media-control-name);
+}
+/*
+@media  (min-width:@sky-sm-size) and (max-width:@sky-md-size){
+//平板
+	.hidden-control(sm);
+}
+@media  (min-width:@sky-md-size) and (max-width:@sky-lg-size){
+//电脑
+	.hidden-control(md);
+}
+@media  (min-width:@sky-lg-size){//电脑
+	.hidden-control(lg);
+}
+*/

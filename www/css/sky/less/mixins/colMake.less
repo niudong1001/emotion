@@ -1,0 +1,260 @@
+.col(){
+	position: relative;
+	float: left;
+	min-height: 1px;
+	box-sizing: border-box;
+	padding:@sky-grid-col-paddingTB @sky-grid-col-paddingLR;
+	vertical-align: top;
+	text-rendering: auto;
+}
+//无响应式
+.colSet-non(){
+	.col-1,
+	.col-1-5,
+	.col-2-5,
+	.col-3-5,
+	.col-4-5,
+	.col-1-12,
+	.col-2-12,
+	.col-3-12,
+	.col-4-12,
+	.col-5-12,
+	.col-6-12,
+	.col-7-12,
+	.col-8-12,
+	.col-9-12,
+	.col-10-12,
+	.col-11-12{
+		.col();
+	}
+}
+.colMake-non(){
+	.col-1{
+		width: 100%;
+	}
+	.col-1-5{
+		width: 20%;
+	}
+	.col-2-5{
+		width: 40%;
+	}
+	.col-3-5{
+		width: 60%;
+	}
+	.col-4-5{
+		width: 80%;
+	}
+	.col-1-12{
+		width: 8.3333%;
+	}
+	.col-2-12{
+		width: 16.6667%;
+	}
+	.col-3-12{
+	    width: 25%;
+	}
+	.col-4-12{
+		width: 33.3333%;
+	}
+	.col-5-12{
+		width: 41.6667%;
+	}
+	.col-6-12{
+	    width: 50%;
+	}
+	.col-7-12{
+	    width: 58.3333%;
+	}
+	.col-8-12{
+		width: 66.6667%;
+	}
+	.col-9-12{
+		width: 75%;
+	}
+	.col-10-12{
+		width: 83.3333%;
+	}
+	.col-11-12{
+		width: 91.6667%;
+	}
+}
+.offsetMake-non(){
+	.offset-1-5{
+		margin-left: 20%;
+	}
+	.offset-2-5{
+		margin-left: 40%;
+	}
+	.offset-3-5{
+		margin-left: 60%;
+	}
+	.offset-4-5{
+		margin-left: 80%;
+	}
+	.offset-1-12{
+		margin-left: 8.3333%;
+	}
+	.offset-2-12{
+		margin-left: 16.6667%;
+	}
+	.offset-3-12{
+	    margin-left: 25%;
+	}
+	.offset-4-12{
+		margin-left: 33.3333%;
+	}
+	.offset-5-12{
+		margin-left: 41.6667%;
+	}
+	.offset-6-12{
+	    margin-left: 50%;
+	}
+	.offset-7-12{
+	    margin-left: 58.3333%;
+	}
+	.offset-8-12{
+		margin-left: 66.6667%;
+	}
+	.offset-9-12{
+		margin-left: 75%;
+	}
+	.offset-10-12{
+		margin-left: 83.3333%;
+	}
+	.offset-11-12{
+		margin-left: 91.6667%;
+	}
+}
+//响应式
+.colSet(@a){
+	.col-@{a}-1,
+	.col-@{a}-1-5,
+	.col-@{a}-2-5,
+	.col-@{a}-3-5,
+	.col-@{a}-4-5,
+	.col-@{a}-1-12,
+	.col-@{a}-2-12,
+	.col-@{a}-3-12,
+	.col-@{a}-4-12,
+	.col-@{a}-5-12,
+	.col-@{a}-6-12,
+	.col-@{a}-7-12,
+	.col-@{a}-8-12,
+	.col-@{a}-9-12,
+	.col-@{a}-10-12,
+	.col-@{a}-11-12{
+		.col();
+	}
+}
+.colMake(@a){
+	.col-@{a}-1{
+		width: 100%;
+	}
+	.col-@{a}-1-5{
+		width: 20%;
+	}
+	.col-@{a}-2-5{
+		width: 40%;
+	}
+	.col-@{a}-3-5{
+		width: 60%;
+	}
+	.col-@{a}-4-5{
+		width: 80%;
+	}
+	.col-@{a}-1-12{
+		width: 8.3333%;
+	}
+	.col-@{a}-2-12{
+		width: 16.6667%;
+	}
+	.col-@{a}-3-12{
+	    width: 25%;
+	}
+	.col-@{a}-4-12{
+		width: 33.3333%;
+	}
+	.col-@{a}-5-12{
+		width: 41.6667%;
+	}
+	.col-@{a}-6-12{
+	    width: 50%;
+	}
+	.col-@{a}-7-12{
+	    width: 58.3333%;
+	}
+	.col-@{a}-8-12{
+		width: 66.6667%;
+	}
+	.col-@{a}-9-12{
+		width: 75%;
+	}
+	.col-@{a}-10-12{
+		width: 83.3333%;
+	}
+	.col-@{a}-11-12{
+		width: 91.6667%;
+	}
+}
+.offsetMake(@a){
+	.offset-@{a}-1-5{
+		margin-left: 20%;
+	}
+	.offset-@{a}-2-5{
+		margin-left: 40%;
+	}
+	.offset-@{a}-3-5{
+		margin-left: 60%;
+	}
+	.offset-@{a}-4-5{
+		margin-left: 80%;
+	}
+	.offset-@{a}-1-12{
+		margin-left: 8.3333%;
+	}
+	.offset-@{a}-2-12{
+		margin-left: 16.6667%;
+	}
+	.offset-@{a}-3-12{
+	    margin-left: 25%;
+	}
+	.offset-@{a}-4-12{
+		margin-left: 33.3333%;
+	}
+	.offset-@{a}-5-12{
+		margin-left: 41.6667%;
+	}
+	.offset-@{a}-6-12{
+	    margin-left: 50%;
+	}
+	.offset-@{a}-7-12{
+	    margin-left: 58.3333%;
+	}
+	.offset-@{a}-8-12{
+		margin-left: 66.6667%;
+	}
+	.offset-@{a}-9-12{
+		margin-left: 75%;
+	}
+	.offset-@{a}-10-12{
+		margin-left: 83.3333%;
+	}
+	.offset-@{a}-11-12{
+		margin-left: 91.6667%;
+	}
+}
+.cols-media(@a,@b){
+	@media (min-width:@a){
+		.colSet(@b);
+		.colMake(@b);
+		.offsetMake(@b);
+	}
+}
+//无响应式的修复(在ie9以下让类似col-sm-*之类的类不至于无效,不一定会使用)
+/*
+.cols-non(@a){
+	.colSet(@a);
+	.colMake(@a);
+}
+*/
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/sky/sky.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+  </head>
+  <body>
+  <div style="text-align: center;margin-top: 1em">
+<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=55" width="255" height="294" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div>
+<div ng-app="weather" ng-controller="weatherCtrl" style="background-color: white;height: 100%;text-align: center;padding: .5em 1em;color: #333;">
+  <div style="text-align: left;padding: 0 1em;color: #666;"><span style="float: left;">今日推荐</span>
+  <span class="fa fa-close" ng-click="close()" style="float: right;color: #888;padding-top: .1em"></span>
+  </div>
+  <div style="height: 38%;margin-top: 1em;padding-top: 1em">
+    <img src="{{arr[0]}}" alt="IMG"  style="max-height:100%;width: auto;border-radius: .3em " />
+  </div>
+</div>
+<script type="text/javascript">
+  var weatherUrl="http://php.weather.sina.com.cn/xml.php?city=%c9%cf%ba%a3&password=DJOYnieT8234jlsK&day=0";
+  var clothUrl="http://115.159.145.109/emotion/php/weatherDeal.php"
+  var app = angular.module('weather', []);
+  app.controller('weatherCtrl', function($scope,$http) {
+
+      $scope.tem="13";
+      $scope.arr=[];
+      $http.get(clothUrl+"?user="+sessionStorage.user+"&tem="+$scope.tem).success(function(res){
+        //alert(res);
+         $scope.arr=res.split(",");
+         $scope.arr[0]="http://115.159.145.109/emotion/pics/"+$scope.arr[0];
+      });
+      $scope.close=function(){
+        window.location.href="main.html";
+      }
+  });
+</script>
+  </body>
+  </html>

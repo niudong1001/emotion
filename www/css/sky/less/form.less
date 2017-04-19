@@ -1,0 +1,328 @@
+.form-item-set(){
+	padding: @sky-form-item-paddingTB @sky-form-item-paddingLR;
+	border: 1px solid @sky-form-item-border-color;
+	box-shadow: inset 0 1px 3px #ddd;
+	border-radius: @sky-form-item-border-radius;
+	box-sizing: border-box;
+	.inline-block;
+}
+.form-item-focus(){//no file&radio&checkbox
+	outline: 0;
+    border-color: @sky-form-item-focus-border-color;
+}
+.form-item-disabled(){
+	cursor: not-allowed;
+	background-color: @sky-form-item-disabled-bg-color;
+	color: @sky-form-item-disabled-color;
+}
+.form-item-readonly(){
+	background-color: @sky-form-item-readonly-bg-color;
+	color: @sky-form-item-readonly-color; 
+	border-color: @sky-form-item-readonly-border-color;
+}
+.form-item-invalid(){
+	color: @sky-form-item-invaild-color;
+	border-color: @sky-form-item-invaild-border-color;
+}
+//class
+.form-item{
+	.form-item-set();
+	&:focus{
+		.form-item-focus();
+	}
+	&:disabled{
+		.form-item-disabled();
+	}
+}
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="date"],
+.form input[type="month"],
+.form input[type="time"],
+.form input[type="datetime"],
+.form input[type="datetime-local"],
+.form input[type="week"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="tel"],
+.form input[type="color"],
+.form select,
+.form textarea {
+	.form-item-set();
+}
+.form input:not([type]) {
+	.form-item-set();
+}
+.form input[type="color"] {
+    padding: 0.2em 0.5em;
+}
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="email"]:focus,
+.form input[type="url"]:focus,
+.form input[type="date"]:focus,
+.form input[type="month"]:focus,
+.form input[type="time"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="datetime-local"]:focus,
+.form input[type="week"]:focus,
+.form input[type="number"]:focus,
+.form input[type="search"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="color"]:focus,
+.form select:focus,
+.form textarea:focus {
+    .form-item-focus();
+}
+.form input:not([type]):focus {
+    .form-item-focus();
+}
+.form input[type="file"]:focus,
+.form input[type="radio"]:focus,
+.form input[type="checkbox"]:focus {
+    outline: thin solid @sky-form-item-focus-border-color;;
+    outline: 1px auto @sky-form-item-focus-border-color;;
+}
+.form .checkbox,
+.form .radio {
+	display: block;
+    margin: @sky-form-item-paddingTB 0;
+}
+.form input[type="text"][disabled],
+.form input[type="password"][disabled],
+.form input[type="email"][disabled],
+.form input[type="url"][disabled],
+.form input[type="date"][disabled],
+.form input[type="month"][disabled],
+.form input[type="time"][disabled],
+.form input[type="datetime"][disabled],
+.form input[type="datetime-local"][disabled],
+.form input[type="week"][disabled],
+.form input[type="number"][disabled],
+.form input[type="search"][disabled],
+.form input[type="tel"][disabled],
+.form input[type="color"][disabled],
+.form select[disabled],
+.form textarea[disabled] {
+    .form-item-disabled();
+}
+.form input:not([type])[disabled] {
+    .form-item-disabled();
+}
+.form input[readonly],
+.form select[readonly],
+.form textarea[readonly] {
+	.form-item-readonly();
+}
+.form input:focus:invalid,
+.form textarea:focus:invalid,
+.form select:focus:invalid {
+	.form-item-invalid();
+}
+.form input[type="file"]:focus:invalid:focus,
+.form input[type="radio"]:focus:invalid:focus,
+.form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: @sky-form-item-invaild-border-color;
+}
+.form select{
+	height: @sky-form-select-height;
+	border: 1px solid @sky-form-item-border-color;
+	background-color: white;
+}
+.form select[multiple] {
+    height: auto;
+}
+.form label {
+    margin: @sky-form-label-marginT 0 @sky-form-label-marginB;
+}
+.form fieldset {
+    margin: 0;
+    padding: @sky-form-fieldset-paddingT 0 @sky-form-fieldset-paddingB;
+    border: 0;
+}
+.form legend {//legend
+    display: block;
+    width: 100%;
+    padding: @sky-form-legend-paddingTB 0;
+    margin-bottom: @sky-form-legend-marginB;
+    color: @sky-form-legend-color;
+    border-bottom: 1px solid @sky-form-legend-borderB-color;
+}
+.form-stacked input[type="text"],
+.form-stacked input[type="password"],
+.form-stacked input[type="email"],
+.form-stacked input[type="url"],
+.form-stacked input[type="date"],
+.form-stacked input[type="month"],
+.form-stacked input[type="time"],
+.form-stacked input[type="datetime"],
+.form-stacked input[type="datetime-local"],
+.form-stacked input[type="week"],
+.form-stacked input[type="number"],
+.form-stacked input[type="search"],
+.form-stacked input[type="tel"],
+.form-stacked input[type="color"],
+.form-stacked input[type="file"],
+.form-stacked select,
+.form-stacked label,
+.form-stacked textarea {
+    display: block;
+    margin: @sky-form-stacked-marginTB 0;
+}
+.form-stacked input:not([type]) {
+    display: block;
+    margin: @sky-form-stacked-marginTB 0;
+}
+//aligned
+.form-aligned input,
+.form-aligned textarea,
+.form-aligned select {
+    .inline-block;
+    vertical-align: middle;
+}
+.form-aligned textarea {
+    vertical-align: top;
+}
+.form-aligned .form-aligned-group {
+    margin-bottom: @sky-form-aligned-group-marginB;
+}
+.form-aligned-label-control(){
+	text-align: right;
+	display: inline-block;
+	vertical-align: middle;
+	width: @sky-form-aligned-label-width;
+	margin: 0 @sky-form-aligned-label-marginR 0 0;
+}
+.form-aligned-content-control(){
+	margin: @sky-form-aligned-content-marginT 0 0 @sky-form-aligned-content-marginL;
+}
+.form-aligned .form-aligned-group label,
+.form-aligned .form-aligned-label {
+    .form-aligned-label-control()
+}
+.form-aligned .form-aligned-content {
+    .form-aligned-content-control();
+}
+.form input.input-round,
+.form .input-round {
+    border-radius: @sky-form-input-round-radius;
+    padding: @sky-form-input-round-paddingTB @sky-form-input-round-paddingLR;
+}
+.form .form-fieldset-group{
+	margin-bottom: @sky-form-fieldset-group-marginB;
+}
+.form .form-fieldset-group input,
+.form .form-fieldset-group textarea {
+	display: block;
+	padding: @sky-form-fieldset-group-item-padding;
+	margin: 0 0 -1px;
+	border-radius: 0;
+	position: relative;
+	top: -1px;
+}
+.form .form-fieldset-group input:focus,
+.form .form-fieldset-group textarea:focus {
+    z-index: 3;
+}
+.form .form-fieldset-group input:first-child,
+.form .form-fieldset-group textarea:first-child {
+    top: 1px;
+    border-radius: @sky-form-item-border-radius @sky-form-item-border-radius 0 0;
+    margin: 0;
+}
+.form .form-fieldset-group input:last-child,
+.form .form-fieldset-group textarea:last-child {
+    top: 1px;
+    border-radius: 0 0 @sky-form-item-border-radius @sky-form-item-border-radius;
+    margin: 0;
+}
+.form .form-fieldset-group button {
+    margin: @sky-form-fieldset-group-button-marginTB 0;
+}
+.form .input-1 {
+    width: 100%;
+}
+.form .input-2-3 {
+    width: 66%;
+}
+.form .input-1-2 {
+    width: 50%;
+}
+.form .input-1-3 {
+    width: 33%;
+}
+.form .input-1-4 {
+    width: 25%;
+}
+.form-message-inline{
+	display: inline-block;
+	padding-left: @sky-form-message-paddingL;
+	color: @sky-form-message-color;
+	vertical-align: middle;
+	font-size: @sky-form-message-size;
+}
+.form-message {
+    display: block;
+    color: @sky-form-message-color;
+    font-size: @sky-form-message-size;
+}
+@media only screen and (max-width : @sky-md-size) {
+	.form button[type="submit"] {
+	    margin: 0.7em 0 0;
+	}
+	.form input:not([type]),
+	.form input[type="text"],
+	.form input[type="password"],
+	.form input[type="email"],
+	.form input[type="url"],
+	.form input[type="date"],
+	.form input[type="month"],
+	.form input[type="time"],
+	.form input[type="datetime"],
+	.form input[type="datetime-local"],
+	.form input[type="week"],
+	.form input[type="number"],
+	.form input[type="search"],
+	.form input[type="tel"],
+	.form input[type="color"],
+	.form label {
+	    margin-bottom: @sky-m-form-item-marginB;
+	    display: block;
+	}
+	.form-fieldset-group input:not([type]),
+	.form-fieldset-group input[type="text"],
+	.form-fieldset-group input[type="password"],
+	.form-fieldset-group input[type="email"],
+	.form-fieldset-group input[type="url"],
+	.form-fieldset-group input[type="date"],
+	.form-fieldset-group input[type="month"],
+	.form-fieldset-group input[type="time"],
+	.form-fieldset-group input[type="datetime"],
+	.form-fieldset-group input[type="datetime-local"],
+	.form-fieldset-group input[type="week"],
+	.form-fieldset-group input[type="number"],
+	.form-fieldset-group input[type="search"],
+	.form-fieldset-group input[type="tel"],
+	.form-fieldset-group input[type="color"] {
+	    margin-bottom: 0;
+	}
+	.form-aligned .form-aligned-group label,
+	.form-aligned .form-aligned-label {
+	   margin-bottom: @sky-m-form-aligned-label-marginB;
+	   text-align: left;
+	   display: block;
+	   width: 100%;
+	}
+	.form-aligned .form-aligned-content {
+		margin: @sky-m-form-aligned-content-marginT 0 0 0;
+	}
+	.form-message-inline,
+	.form-message {
+	    display: block;
+	    font-size: @sky-m-form-message-size;
+	    /* Increased bottom padding to make it group with its related input element. */
+	    padding: @sky-m-form-message-paddingT 0 @sky-m-form-message-paddingB;
+	}
+}

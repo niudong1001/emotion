@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sky-grid-test</title>
+	<link rel="stylesheet" type="text/css" href="../sky.css">
+	<link rel="stylesheet" type="text/css" href="../sky-r.css">
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="../sky-r-old-ie.css">
+	<![endif]-->
+	<style>
+		.row{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			height: 100px;
+		}
+		.class1{
+			background-color: red;
+		}
+		.class2{
+			background-color:brown;
+		}
+		.class3{
+			background-color: yellow;
+		}
+		.class4{
+			background-color:blue;
+		}
+		.class5{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-1-5 class1">1-5</div>
+		<div class="col-1-5 class2">1-5</div>
+		<div class="col-1-5 class3">1-5</div>
+		<div class="col-1-5 class4">1-5</div>
+		<div class="col-1-5 class5">1-5</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3-12 class1">1</div>
+		<div class="col-sm-3-12 class2">1</div>
+		<div class="col-sm-3-12 class3">1</div>
+		<div class="col-sm-3-12 class4">1</div>
+	</div>
+	<!--
+	<div class="row">
+		<div class="col-md-4-12 class1">1</div>
+		<div class="col-md-4-12 class2">1</div>
+		<div class="col-md-4-12 class3">1</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6-12 class1">1</div>
+		<div class="col-lg-6-12 class2">1</div>
+	</div>
+	-->
+	<h1>hidden-test</h1>
+	<div class="row">
+		<div class="col-1 hidden-mobile class1">非手机 can see</div>
+		<!--
+		<div class="col-1 hidden-sm class2">非平板</div>
+		<div class="col-1 hidden-md class3">非小屏幕电脑</div>
+		<div class="col-1 hidden-lg class4">非大频幕电脑</div>
+		-->
+	</div>
+	<h1>offset-test</h1>
+	<div class="row">
+		<div class="col-sm-3-5 offset-sm-1-5 class1 col-1-5 offset-2-5">偏移测试</div>
+	</div>
+</body>
+</html>

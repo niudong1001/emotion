@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/sky/sky.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/main.js"></script>
+    <!-- your app's js -->
+  </head>
+  <body>
+    <div class="login-p1">
+      <div class="header">
+        <i class="fa fa-chevron-left" ng-click="modal.hide()"></i> 返回登陆emotion
+      </div>
+      <div class="t-c">
+        <div class="title">注册EMOTION账号，玩转所有服务</div>
+      </div>
+      <form class="form t-c">
+        <input type="text" placeholder="请输入用户名" class="f-i" />
+        <input type="text" placeholder="请输入密码" class="f-i" />
+        <input type="text" placeholder="请输入密码" class="f-i" />
+        <button class="btn btn-secondary btn-block btn-round">快速注册</button>
+      </form>
+    </div>
+  </body>
+  </html>

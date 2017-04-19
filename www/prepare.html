@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/sky/sky.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        angular.module("pre", ['ionic'])
+
+        .controller('preCtrl', function($scope) {
+          
+          $scope.myActiveSlide = 1;
+          
+        })
+    </script>
+    <!-- your app's js -->
+    <style type="text/css">
+        .slider {
+          height: 100%;
+        }
+       .slider-slide {
+          color: #fff; 
+          background-color: #fff; text-align: center; 
+          font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; }
+        .blue {
+          background-color: lightblue;
+        }
+
+        .yellow {
+          background-color: brown;
+        }
+
+        .pink {
+          background-color: pink;
+        }
+        .box{ 
+          height:100%; 
+        } 
+        .box h1{
+          position:relative; top:50%; transform:translateY(-50%); color: white;
+        }
+        .btn{
+          margin-top: 80%;
+          background-color: transparent;
+          border:1px solid #eee;
+          color: white;
+        }
+      </style>
+  </head>
+  <body ng-app="pre" animation="slide-left-right-ios7" ng-controller="preCtrl">
+    <ion-slide-box active-slide="myActiveSlide">
+        <ion-slide>
+          <div class="box blue"><h1>WHAT IS BLUE LIKE?</h1></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box yellow"><h1>WHAT IS BROWN LIKE?</h1></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box pink"><h1>WELCOME TO USE EMOTION</h1>
+          <a href="index.html"><button class="btn">马上进入</button></a>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+  </body>
+  </html>

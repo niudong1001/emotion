@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/sky/sky.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/upPic.js"></script>
+    <!-- your app's js -->
+  </head>
+  <body ng-app="up" ng-controller="upCtrl" class="up">
+    <div class="up-p1">
+    <a href="main.html">
+      <div class="header">
+        <i class="fa fa-chevron-left" ></i> 返回
+      </div>
+    </a>
+      <div class="content p-r" ng-init="upImg='img/upDemo.png'">
+        <img ng-src="{{upImg}}" alt="Demo" class="img-r v-m" >
+        <div class="paddingB"></div>
+        <div class="up-tips">
+          <div class="up-tip" ng-if="tip.use" ng-repeat="tip in tips">{{tip.value}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="up-p2">
+      <div class="it">
+        <div class="content" ng-click="cho.show()"> 
+          <span class="text">选择照片</span>
+          <i class="fa fa-chevron-right" ></i>
+        </div>
+      </div>
+      <div class="it">
+        <div class="content" ng-click="put.show()">
+          <span class="text">贴上标签</span>
+          <i class="fa fa-chevron-right" ></i>
+        </div>
+      </div>
+      <div class="it">
+        <div class="content" ng-click="upLoad()">
+          <span class="text">上传到云</span>
+          <i class="fa fa-chevron-right" ></i>
+        </div>
+      </div>
+      <script id="templates/choose.html" type="text/ng-template">
+        <div class="up-p2 cho-p1">
+          <div class="it">
+            <div class="content" ng-click="takePhoto()"> 
+              <span class="text">拍照选择</span>
+              <i class="fa fa-chevron-right" ></i>
+            </div>
+          </div>
+          <div class="it">
+            <div class="content" ng-click="pickImage()">
+              <span class="text">相册选择</span>
+              <i class="fa fa-chevron-right" ></i>
+            </div>
+          </div>
+          <div class="it">
+            <div class="content" ng-click="cho.hide()">
+              <span class="text">返回上级</span>
+              <i class="fa fa-chevron-right" ></i>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script id="templates/put.html" type="text/ng-template">
+        <div class="up-p2 cho-p1 put-p1">
+          <div class="content"> 
+            <span class="text">您可以选择的标签与厚薄度数如下:</span>
+          </div>
+          <div class="tips">
+            <button class="tip btn btn-{{tip.use}}" type="button" ng-repeat="tip in tips" ng-click="getTip()">{{tip.value}}</button>
+          </div>
+          <div class="tips">
+            <button class="tip btn btn-{{r.use}}" type="button" ng-repeat="r in rate" ng-click="getRate(r)">{{r.value}}</button>
+          </div>
+          <div class="t-c">
+          <button class="btn btn-back btn-opacity" ng-click="upLoad()">现在上传</button>
+          </div>
+        </div>
+      </script>
+      <script id="templates/upLoad.html" type="text/ng-template">
+        <div class="up-p2 cho-p1 upL-p1">
+          <div class="content t-c">
+          正在上传<br/>
+          <i class="fa fa-spinner fa-pulse"></i><br/>
+          <button class="btn btn-opacity">取消</button>
+          </div>
+        </div>
+      </script>
+    </div>
+
+    <div ng-show="isBack" class="bg-div" ng-click="drop()"></div>
+    <div ng-show="alertNow" class="{{proAni}}" >
+       <div class="pro-title">{{proTitle}}</div>
+       <div class="pro-text">{{proText}}</div>
+       <div class="pro-btn" ng-click="ensure()">确认</div>
+     </div>
+
+  </body>
+  </html>

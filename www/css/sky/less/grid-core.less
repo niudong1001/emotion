@@ -1,0 +1,14 @@
+.row {
+	box-sizing: border-box;
+	padding:@sky-grid-paddingTB @sky-grid-paddingLR;
+	text-rendering: optimizespeed;
+	//display:inline-table
+}
+.row:before,
+.row:after {
+	display: table;
+	content: " ";
+}
+.row:after{
+	clear: both;
+}

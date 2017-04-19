@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/sky/sky.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/main.js"></script>
+    <!-- your app's js -->
+  </head>
+  <body ng-app="main" ng-controller="mainCtrl" class="main">
+    <div class="main-p1 t-c">
+      <div class="title">
+      <i class="fa fa-y-combinator"></i>
+      衣新衣情
+      </div>
+      <div class="sub-title">
+        每一天都棒棒的!
+      </div>
+      <div class="info">
+        <button class="log" ng-click="login()" ng-show="!{{isLogin}}">立即登陆</button>
+        <div ng-show="{{isLogin}}">
+          {{loginInfo}}
+          <span ng-click="logout()">我要注销</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-p2 t-c">
+      <div class="row r-top">
+        <div class="col-4-12 it" ng-click="up()">
+            <i class="fa fa-envelope-o i"></i>
+            <span class="title">上传图片</span>
+        </div>
+        <div class="col-4-12 it" ng-click="show()">
+          <i class="fa fa-folder-o i"></i>
+          <span class="title">查看图片</span>
+        </div>
+        <div class="col-4-12 it" ng-click="recommend()">
+          <i class="fa fa-sun-o i"></i>
+          <span class="title">今日推荐</span>
+        </div>
+      </div>
+      <div class="row r-bottom">
+        <div class="col-4-12 ib" ng-click="aboutUs()">
+          <i class="fa fa-smile-o i"></i>
+          <span class="title">关于我们</span>
+        </div>
+        <div class="col-4-12 ib" ng-click="contactUs()">
+          <i class="fa fa-gg i"></i>
+          <span class="title">联系我们</span>
+        </div>
+        <div class="col-4-12 ib">
+          <i class="fa fa-hand-o-up i"></i>
+          <span class="title">我要设置</span>
+        </div>
+      </div>
+    </div>  
+    <div ng-show="isBack" class="bg-div" ng-click="drop()"></div>
+    <div ng-show="alertNow" class="{{proAni}}" >
+       <div class="pro-title">{{proTitle}}</div>
+       <div class="pro-text">{{proText}}</div>
+       <div class="pro-btn" ng-click="ensure()">确认</div>
+     </div>
+  </body>
+</html>

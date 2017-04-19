@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../sky.css">
+	<link rel="stylesheet" type="text/css" href="../sky-r.css">
+	<style type="text/css">
+		.father{
+			width: 400px;
+			height: 60px;
+			border:1px solid #999;
+			text-align: center;
+		}
+		.menu{
+			
+			height: 80px;
+			margin: 0 auto;
+
+		}
+		.tty{
+			display: table-cell;
+			vertical-align: middle;
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+		.tty span{
+			display: inline-block;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+<h1>基本测试</h1>
+<div class="father">
+	<ul class="menu menu-ul ">
+		<li><a href="tt">下拉菜单</a></li>
+		<li><a href="ss">这是测试</a></li>
+	</ul>
+</div>
+<div class="father">
+	<div class="menu menu-middle">
+		<a href="tt">div测试1</a>
+		<a href="ss">div测试2</a>
+	</div>
+</div>
+<div class="father">
+	<nav class="menu">
+		<a href="tt">nav测试1</a>
+		<a href="ss">nav测试2</a>
+	</nav>
+</div>
+
+<h1>其他测试</h1>
+<div class="father">
+	<ul class="menu menu-ul menu-hover menu-padding">
+		<li class="menu-dropdown-li-bottom"><a href="tt" class="btn">下拉菜单</a>
+			<ul>
+				<li>c#</li>
+				<li>java</li>
+			</ul>
+		</li>
+		<li><a href="ss">这是测试</a></li>
+	</ul>
+</div>
+<div class="father">
+	<div class="menu menu-hover menu-padding menu-middle">
+		<a href="tt">div测试1</a>
+		<a href="ss">div测试2</a>
+	</div>
+</div>
+<div class="father">
+	<nav class="menu menu-hover menu-padding">
+		<a href="tt">nav测试1</a>
+		<a href="ss">nav测试2</a>
+	</nav>
+</div>
+
+<h1>vertical测试</h1>
+<div class="father">
+	<ul class="menu menu-ul menu-vertical menu-hover menu-paddingTB">
+		<li><a href="tt">下拉菜单</a></li>
+		<li><a href="ss">这是测试</a></li>
+	</ul>
+</div>
+<div class="father">
+	<div class="menu menu-vertical menu-hover menu-paddingTB">
+		<a href="tt">div测试1</a>
+		<a href="ss">div测试2</a>
+	</div>
+</div>
+<div class="father">
+	<nav class="menu menu-vertical menu-hover menu-paddingTB">
+		<a href="tt">nav测试1</a>
+		<a href="ss">nav测试2</a>
+	</nav>
+<h1>下拉测试</h1>
+<div class="father">
+	<ul class="menu menu-ul menu-hover menu-padding">
+		<li class="menu-dropdown-li-bottom"><a href="tt" class="btn">下拉菜单</a>
+			<ul>
+				<li><a href="#">c#</a></li>
+				<li><a href="#">java</a></li>
+			</ul>
+		</li>
+		<li><a href="ss">这是测试</a></li>
+	</ul>
+</div>
+</div>
+</body>
+</html>
